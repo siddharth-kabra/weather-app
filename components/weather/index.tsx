@@ -1,10 +1,11 @@
 'use client';
-import { useAppSelector } from '@/libs/hooks';
-import TabComponent from '../tabs';
-import { tabs } from '@/utils/constants';
-import Cards from '../card';
 import { useEffect, useState } from 'react';
+import Cards from '../card';
+import TabComponent from '../tabs';
+import { useAppSelector } from '@/libs/hooks';
+import { WeatherData } from '@/types/interface';
 import { getWeatherData } from '@/utils/api';
+import { tabs } from '@/utils/constants';
 
 const WeatherComponent = () => {
   const selectedCity = useAppSelector(state => state.selectedCity.selectedCity);

@@ -1,4 +1,4 @@
-interface WeatherData {
+export interface WeatherData {
   time: string;
   values: {
     cloudBaseAvg: number;

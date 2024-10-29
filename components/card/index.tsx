@@ -1,5 +1,7 @@
-import { useAppSelector } from '@/libs/hooks';
+'use client';
 import React from 'react';
+import { useAppSelector } from '@/libs/hooks';
+import { WeatherData } from '@/types/interface';
 
 interface Props {
   weatherData?: WeatherData;

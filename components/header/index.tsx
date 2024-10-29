@@ -1,5 +1,5 @@
-import { getUnitedKingdomCities } from '@/utils/api';
 import SearchBarComponent from '../search-bar';
+import { getUnitedKingdomCities } from '@/utils/api';
 
 const HeaderComponent = async () => {
   const data = await getUnitedKingdomCities();

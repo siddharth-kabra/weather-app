@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import React, { Suspense } from 'react';
+import StoreProvider from './StoreProvider';
 import HeaderComponent from '@/components/header';
 import SidebarComponent from '@/components/side-bar';
-import StoreProvider from './StoreProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 

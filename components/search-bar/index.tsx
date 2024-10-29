@@ -1,12 +1,12 @@
 'use client';
 
-import { setSelectedCity } from '@/libs/features/city';
-import { useAppDispatch } from '@/libs/hooks';
-import { CONSTANTS } from '@/utils/constants';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 import { v4 as uuidv4 } from 'uuid';
 import SelectedCity from '../selected-city';
+import { setSelectedCity } from '@/libs/features/city';
+import { useAppDispatch } from '@/libs/hooks';
+import { CONSTANTS } from '@/utils/constants';
 
 interface Props {
   data: string[];

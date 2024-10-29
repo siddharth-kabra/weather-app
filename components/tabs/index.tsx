@@ -1,7 +1,7 @@
 'use client';
+import { useEffect } from 'react';
 import { setActiveTab } from '@/libs/features/tabs';
 import { useAppDispatch, useAppSelector } from '@/libs/hooks';
-import { useEffect } from 'react';
 
 interface Props {
   tabs: { label: string; content: string }[];
