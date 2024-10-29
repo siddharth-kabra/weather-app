@@ -1,9 +1,11 @@
 import SearchBarComponent from '../search-bar';
+import SidebarComponent from '../side-bar';
 
 const HeaderComponent = () => {
   return (
  
     <div className="flex-1">
+        <SidebarComponent />
     <div className="flex justify-between py-3 px-6 bg-gray-50 border-b space-x-6 items-center">
       <form action="" className="w-full max-w-md">
         <SearchBarComponent />
