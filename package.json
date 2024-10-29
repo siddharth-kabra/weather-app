@@ -1,0 +1,47 @@
+{
+  "name": "caster",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "tsc": "tsc",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\""
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "bash -c tsc",
+      "yarn run format",
+      "yarn run lint"
+    ]
+  },
+  "dependencies": {
+    "next": "^14.1.4",
+    "next-auth": "^4.24.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "^14.1.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.1",
+    "eslint-plugin-sonarjs": "^0.23.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "postcss": "^8",
+    "prettier": "3.1.1",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
