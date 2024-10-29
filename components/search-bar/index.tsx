@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useAppDispatch } from '@/libs/hooks';
+import { CONSTANTS } from '@/utils/constants';
+import { useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 import { v4 as uuidv4 } from 'uuid';
 import SelectedCity from '../selected-city';
-import { CONSTANTS } from '@/utils/constants';
+import { setSelectedCity } from '@/libs/features/city';
 
 interface Props {
   data: string[];
@@ -12,16 +14,18 @@ interface Props {
 
 const SearchBarComponent = ({ data }: Props) => {
   const [searchValue, setSearchValue] = useState('');
-  const [selectedCity, setSelectedCity] = useState('London');
+  // const [selectedCity, setSelectedCity] = useState('London');
   const [value] = useDebounce(searchValue, 1000);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-
+  const dispatch = useAppDispatch();
   const filteredResults = data?.filter(
     item => item?.toLowerCase()?.includes(value?.toLowerCase()),
   );
-
+  useEffect(() => {
+    dispatch(setSelectedCity('London'));
+  }, []);
   const handleSelectCity = (item: string) => {
-    setSelectedCity(item);
+    dispatch(setSelectedCity(item));
     setSearchValue('');
     setIsDropdownVisible(false);
   };
@@ -76,7 +80,7 @@ const SearchBarComponent = ({ data }: Props) => {
           {CONSTANTS.NO_RESULTS_FOUND}
         </p>
       )}
-      <SelectedCity selectedCity={selectedCity} />
+      <SelectedCity />
     </div>
   );
 };

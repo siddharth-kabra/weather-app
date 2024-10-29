@@ -1,8 +1,8 @@
-interface Props {
-  selectedCity: string;
-}
+import { useAppSelector } from '@/libs/hooks';
 
-const SelectedCity = ({ selectedCity }: Props) => {
+const SelectedCity = () => {
+  const selectedCity = useAppSelector(state => state.selectedCity.selectedCity);
+
   return (
     <div className="relative flex-shrink-0">
       <div className="flex item-center">
@@ -32,7 +32,7 @@ const SelectedCity = ({ selectedCity }: Props) => {
           </defs>
         </svg>
 
-        <span> {selectedCity}</span>
+        <span>{selectedCity}</span>
       </div>
     </div>
   );
