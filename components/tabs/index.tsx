@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Cards from '../card';
 
 const TabComponent = () => {
   const [activeTab, setActiveTab] = useState('Today');
@@ -31,6 +32,8 @@ const TabComponent = () => {
           </li>
         ))}
       </ul>
+
+      <Cards />
     </div>
   );
 };
