@@ -17,7 +17,7 @@ const SearchBarComponent = () => {
       <input
         type="text"
         name="search"
-        placeholder="Search talk"
+        placeholder="Search City"
         autoComplete="off"
         aria-label="Search City"
         className="w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2"
