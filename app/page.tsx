@@ -1,3 +1,5 @@
+import WeatherComponent from '@/components/weather';
+
 export default function Home() {
   return (
     <>
@@ -36,9 +38,8 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-
-      <main className="p-5">
-        {/* <HeaderComponent /> */}
+      <WeatherComponent />
+      {/* <main className="p-5">
         <div
           data-controller="tabs"
           data-tabs-index-value="0"
@@ -92,7 +93,7 @@ export default function Home() {
             <h3 className="text-lg font-semibold">Next 5 Days </h3>
           </div>
         </div>
-      </main>
+      </main> */}
     </>
   );
 }
