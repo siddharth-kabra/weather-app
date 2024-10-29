@@ -21,7 +21,7 @@ const TabComponent = () => {
           <li
             key={tab.label}
             className={`mr-2 ${
-              activeTab === tab.label ? 'bg-red-100' : 'inactive'
+              activeTab === tab.label ? 'bg-blue-100' : 'inactive'
             }`}
             onClick={() => handleTabClick(tab.label)}
           >

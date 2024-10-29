@@ -4,7 +4,7 @@ const SelectedCity = () => {
   const selectedCity = useAppSelector(state => state.selectedCity.selectedCity);
 
   return (
-    <div className="relative flex-shrink-0">
+    <div className="relative flex-shrink-0 mt-3">
       <div className="flex item-center">
         <svg
           width="24"
