@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import selectedCityReducer from './features/city';
+import selectedTabReducer from './features/tabs';
 
 export const makeStore = () =>
   configureStore({
     reducer: {
       selectedCity: selectedCityReducer,
+      selectedTab: selectedTabReducer,
     },
   });
 

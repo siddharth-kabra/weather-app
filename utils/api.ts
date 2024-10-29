@@ -11,11 +11,24 @@ export const getUnitedKingdomCities = async () => {
           country: 'united kingdom',
         }),
         // revalidate time kept to 3600 to keep the cached data for 1 hour
-        next: { revalidate: 3600 },
+        // next: { revalidate: 3600 },
       },
     );
     const data = await res?.json();
     return data?.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getWeatherData = async (city: string) => {
+  try {
+    const res = await fetch(
+      `https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${process.env.NEXT_WEATHER_API_KEY}`,
+      { method: 'GET', headers: { accept: 'application/json' } },
+    );
+    const data = await res?.json();
+    return data;
   } catch (error) {
     console.error(error);
   }

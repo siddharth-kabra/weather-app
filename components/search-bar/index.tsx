@@ -1,12 +1,12 @@
 'use client';
 
+import { setSelectedCity } from '@/libs/features/city';
 import { useAppDispatch } from '@/libs/hooks';
 import { CONSTANTS } from '@/utils/constants';
 import { useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 import { v4 as uuidv4 } from 'uuid';
 import SelectedCity from '../selected-city';
-import { setSelectedCity } from '@/libs/features/city';
 
 interface Props {
   data: string[];
@@ -14,7 +14,6 @@ interface Props {
 
 const SearchBarComponent = ({ data }: Props) => {
   const [searchValue, setSearchValue] = useState('');
-  // const [selectedCity, setSelectedCity] = useState('London');
   const [value] = useDebounce(searchValue, 1000);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const dispatch = useAppDispatch();
@@ -24,7 +23,7 @@ const SearchBarComponent = ({ data }: Props) => {
   useEffect(() => {
     dispatch(setSelectedCity('London'));
   }, []);
-  const handleSelectCity = (item: string) => {
+  const handleSelectCity = async (item: string) => {
     dispatch(setSelectedCity(item));
     setSearchValue('');
     setIsDropdownVisible(false);
@@ -37,7 +36,7 @@ const SearchBarComponent = ({ data }: Props) => {
 
   return (
     <div className="relative flex items-start justify-between text-gray-400 focus-within:text-gray-600">
-      <div className='w-1/2'>
+      <div className="w-1/2">
         <div className="relative flex items-center">
           <svg
             className="w-5 h-5 absolute ml-3 pointer-events-none"

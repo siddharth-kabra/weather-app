@@ -1,20 +1,21 @@
 'use client';
-import React, { useState } from 'react';
-import Cards from '../card';
+import { setActiveTab } from '@/libs/features/tabs';
+import { useAppDispatch, useAppSelector } from '@/libs/hooks';
+import { useEffect } from 'react';
 
-const TabComponent = () => {
-  const [activeTab, setActiveTab] = useState('Today');
+interface Props {
+  tabs: { label: string; content: string }[];
+}
+const TabComponent = ({ tabs }: Props) => {
+  const activeTab = useAppSelector(state => state.selectedTab.activeTab);
 
-  const tabs = [
-    { label: 'Today', content: 'Today' },
-    { label: 'Tomorrow', content: 'Tomorrow' },
-    { label: 'Next 5 Days', content: 'Next 5 Days' },
-  ];
-
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setActiveTab('Today'));
+  }, []);
   const handleTabClick = (tab: string) => {
-    setActiveTab(tab);
+    dispatch(setActiveTab(tab));
   };
-
   return (
     <div data-controller="tabs" className="mx-6 mt-6">
       <ul className="flex flex-wrap border-b border-gray-200 dark:border-gray-700">
@@ -32,8 +33,6 @@ const TabComponent = () => {
           </li>
         ))}
       </ul>
-
-      <Cards />
     </div>
   );
 };

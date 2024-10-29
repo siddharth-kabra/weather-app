@@ -1,17 +1,54 @@
+import { useAppSelector } from '@/libs/hooks';
 import React from 'react';
 
-const Cards = () => {
+interface Props {
+  weatherData?: WeatherData;
+}
+
+const Cards = ({ weatherData }: Props) => {
+  const activeTab = useAppSelector(state => state.selectedTab.activeTab);
+
   const cardData = [
-    { city: 'Dubai', date: 'July 29', tempHigh: 32, tempLow: 20, condition: 'Partly cloudy' },
-    { city: 'New York', date: 'July 30', tempHigh: 28, tempLow: 18, condition: 'Sunny' },
-    { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
-    { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
-    { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
+    {
+      city: 'Dubai',
+      date: 'July 29',
+      tempHigh: 32,
+      tempLow: 20,
+      condition: 'Partly cloudy',
+    },
+    {
+      city: 'New York',
+      date: 'July 30',
+      tempHigh: 28,
+      tempLow: 18,
+      condition: 'Sunny',
+    },
+    {
+      city: 'London',
+      date: 'July 31',
+      tempHigh: 22,
+      tempLow: 15,
+      condition: 'Rainy',
+    },
+    {
+      city: 'London',
+      date: 'July 31',
+      tempHigh: 22,
+      tempLow: 15,
+      condition: 'Rainy',
+    },
+    {
+      city: 'London',
+      date: 'July 31',
+      tempHigh: 22,
+      tempLow: 15,
+      condition: 'Rainy',
+    },
     // { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
     // { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
     // Add more card data as needed
   ];
-
+  console.log(weatherData, activeTab);
   return (
     <div className="flex flex-wrap justify-center">
       {cardData.map((card, index) => (
@@ -33,13 +70,38 @@ const Cards = () => {
             <rect width="32" height="48" x="240" y="448"></rect>
             <rect width="48" height="32" x="448" y="240"></rect>
             <rect width="48" height="32" x="16" y="240"></rect>
-            <rect width="32" height="45.255" x="400" y="393.373" transform="rotate(-45 416 416)"></rect>
-            <rect width="32.001" height="45.255" x="80" y="73.373" transform="rotate(-45 96 96)"></rect>
-            <rect width="45.255" height="32" x="73.373" y="400" transform="rotate(-45.001 96.002 416.003)"></rect>
-            <rect width="45.255" height="32.001" x="393.373" y="80" transform="rotate(-45 416 96)"></rect>
+            <rect
+              width="32"
+              height="45.255"
+              x="400"
+              y="393.373"
+              transform="rotate(-45 416 416)"
+            ></rect>
+            <rect
+              width="32.001"
+              height="45.255"
+              x="80"
+              y="73.373"
+              transform="rotate(-45 96 96)"
+            ></rect>
+            <rect
+              width="45.255"
+              height="32"
+              x="73.373"
+              y="400"
+              transform="rotate(-45.001 96.002 416.003)"
+            ></rect>
+            <rect
+              width="45.255"
+              height="32.001"
+              x="393.373"
+              y="80"
+              transform="rotate(-45 416 96)"
+            ></rect>
           </svg>
           <div className="mb-2 text-3xl font-semibold">
-            {card.tempHigh}°<span className="mx-1 font-normal">/</span>{card.tempLow}°
+            {card.tempHigh}°<span className="mx-1 font-normal">/</span>
+            {card.tempLow}°
           </div>
           <p className="dark:text-gray-600">{card.condition}</p>
         </div>

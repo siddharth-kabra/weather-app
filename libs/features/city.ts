@@ -1,10 +1,10 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-interface AssistantState {
+interface City {
   selectedCity?: string;
 }
 
-const initialState: AssistantState = {};
+const initialState: City = {};
 
 export const citySlice = createSlice({
   name: 'city',
