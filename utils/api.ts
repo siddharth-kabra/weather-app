@@ -1,0 +1,22 @@
+export const getUnitedKingdomCities = async () => {
+  try {
+    const res = await fetch(
+      'https://countriesnow.space/api/v0.1/countries/cities',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          country: 'united kingdom',
+        }),
+        // revalidate time kept to 3600 to keep the cached data for 1 hour
+        next: { revalidate: 3600 },
+      },
+    );
+    const data = await res?.json();
+    return data?.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
