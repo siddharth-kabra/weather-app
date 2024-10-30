@@ -11,6 +11,11 @@ export const CONSTANTS = {
   MAX_TEMP: 'Max temp',
   MIN_TEMP: 'Min temp',
   PLACEHOLDER: 'Search City in United Kingdom',
+  OOPS: 'OOPS',
+  SOMETHING_WRONG: 'Something went wrong.',
+  COMING_SOON:' Coming Soon...',
+  COMING_SOON_PARA:'We\'re working hard to bring you something amazing. Stay tuned!',
+  TRY_AGAIN: 'Try again',
 };
 
 export const tabs = [
