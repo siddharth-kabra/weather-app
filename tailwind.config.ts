@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         blue: {
           50: "#f6f8ff",
+          100: "#ced4fd",
           700: "#5e68ff", // Corrected color assignment with hex value
         },
       },
