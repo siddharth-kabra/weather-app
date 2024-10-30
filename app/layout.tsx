@@ -25,7 +25,7 @@ export default function RootLayout({
           <body className={inter.className}>
             <div className="flex">
               <SidebarComponent />
-              <div className="flex-1 min-h-screen bg-blue-100/[0.3]">
+              <div className="flex-1 min-h-screen bg-blue-700/[0.1]">
                 <HeaderComponent />
                 {children}
               </div>

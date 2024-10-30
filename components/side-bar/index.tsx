@@ -24,7 +24,7 @@ const SidebarComponent = () => {
         />
       </div>
 
-      <div className="mb-10">
+      <div className="mb-10 px-3">
         {links.map((link) => {
           const isActive = pathname === link.href;
 
@@ -32,17 +32,15 @@ const SidebarComponent = () => {
             <Link
               key={link.id}
               href={link.href}
-              className={`flex items-center px-6 py-2.5 ${
+              className={`flex items-center px-6 py-2.5 mb-3 ${
                 isActive
-                  ? "bg-blue-700 text-white"
-                  : "text-white hover:text-white/[0.5]"
+                  ? "bg-blue-700 text-white rounded"
+                  : "hover:text-white hover:bg-blue-700 rounded"
               } group`}
             >
               <svg
                 className={`h-5 w-5 mr-2 ${
-                  isActive
-                    ? "text-white"
-                    : "text-white group-hover:text-white/[0.5]"
+                  isActive ? "text-white" : "text-white group-hover:text-white"
                 }`}
                 fill="none"
                 viewBox="0 0 24 24"
