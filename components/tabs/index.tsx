@@ -12,7 +12,8 @@ const TabComponent = ({ tabs }: Props) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setActiveTab('Today'));
-  }, []);
+  }, [dispatch]);
+
   const handleTabClick = (tab: string) => {
     dispatch(setActiveTab(tab));
   };
@@ -22,7 +23,7 @@ const TabComponent = ({ tabs }: Props) => {
         {tabs?.map(tab => (
           <li
             key={tab.label}
-            className={`mr-2 ${
+            className={`mr-2 cursor-pointer ${
               activeTab === tab.label ? 'bg-blue-100' : 'inactive'
             }`}
             onClick={() => handleTabClick(tab.label)}

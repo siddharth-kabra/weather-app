@@ -27,8 +27,7 @@ export const getWeatherData = async (city: string) => {
       `https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${process.env.NEXT_WEATHER_API_KEY}`,
       { method: 'GET', headers: { accept: 'application/json' } },
     );
-    const data = await res?.json();
-    return data;
+    return await res?.json();
   } catch (error) {
     console.error(error);
   }

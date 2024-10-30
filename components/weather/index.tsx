@@ -13,7 +13,7 @@ const WeatherComponent = () => {
   const fetchWeatherData = async () => {
     try {
       const data = await getWeatherData(selectedCity ?? 'London');
-      setWeatherData(data?.timelines?.daily);
+      setWeatherData(data.timelines.daily);
     } catch (error) {
       console.error(error);
     }
