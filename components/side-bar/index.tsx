@@ -1,20 +1,20 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const SidebarComponent = () => {
   const pathname = usePathname();
   const links = [
-    { href: '/', label: 'Home', id: '1' },
-    { href: '/location', label: 'Location', id: '2' },
-    { href: '/users', label: 'Users', id: '3' },
-    { href: '/notifications', label: 'Notifications', id: '4' },
-    { href: '/settings', label: 'Settings', id: '5' },
+    { href: "/", label: "Home", id: "1" },
+    { href: "/location", label: "Location", id: "2" },
+    { href: "/users", label: "Users", id: "3" },
+    { href: "/notifications", label: "Notifications", id: "4" },
+    { href: "/settings", label: "Settings", id: "5" },
   ];
 
   return (
-    <div className="w-64 border-r border-gray-200 bg-blue-500">
+    <div className="w-64 border-r border-gray-200 bg-white shadow-lg">
       <div className="py-4 px-6 mb-6">
         <Image
           src="/images/logo.svg"
@@ -25,7 +25,7 @@ const SidebarComponent = () => {
       </div>
 
       <div className="mb-10">
-        {links.map(link => {
+        {links.map((link) => {
           const isActive = pathname === link.href;
 
           return (
@@ -34,15 +34,15 @@ const SidebarComponent = () => {
               href={link.href}
               className={`flex items-center px-6 py-2.5 ${
                 isActive
-                  ? 'bg-blue-700 text-white'
-                  : 'text-white hover:text-white/[0.5]'
+                  ? "bg-blue-700 text-white"
+                  : "text-white hover:text-white/[0.5]"
               } group`}
             >
               <svg
                 className={`h-5 w-5 mr-2 ${
                   isActive
-                    ? 'text-white'
-                    : 'text-white group-hover:text-white/[0.5]'
+                    ? "text-white"
+                    : "text-white group-hover:text-white/[0.5]"
                 }`}
                 fill="none"
                 viewBox="0 0 24 24"

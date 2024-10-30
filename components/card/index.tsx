@@ -1,50 +1,50 @@
-'use client';
-import React from 'react';
-import { useAppSelector } from '@/libs/hooks';
-import { WeatherData } from '@/types/interface';
+"use client";
+import React from "react";
+import { useAppSelector } from "@/libs/hooks";
+import { WeatherData } from "@/types/interface";
 
 interface Props {
   weatherData?: WeatherData;
 }
 
 const Cards = ({ weatherData }: Props) => {
-  const activeTab = useAppSelector(state => state.selectedTab.activeTab);
+  const activeTab = useAppSelector((state) => state.selectedTab.activeTab);
 
   const cardData = [
     {
-      city: 'Dubai',
-      date: 'July 29',
+      city: "Dubai",
+      date: "July 29",
       tempHigh: 32,
       tempLow: 20,
-      condition: 'Partly cloudy',
+      condition: "Partly cloudy",
     },
     {
-      city: 'New York',
-      date: 'July 30',
+      city: "New York",
+      date: "July 30",
       tempHigh: 28,
       tempLow: 18,
-      condition: 'Sunny',
+      condition: "Sunny",
     },
     {
-      city: 'London',
-      date: 'July 31',
+      city: "London",
+      date: "July 31",
       tempHigh: 22,
       tempLow: 15,
-      condition: 'Rainy',
+      condition: "Rainy",
     },
     {
-      city: 'London',
-      date: 'July 31',
+      city: "London",
+      date: "July 31",
       tempHigh: 22,
       tempLow: 15,
-      condition: 'Rainy',
+      condition: "Rainy",
     },
     {
-      city: 'London',
-      date: 'July 31',
+      city: "London",
+      date: "July 31",
       tempHigh: 22,
       tempLow: 15,
-      condition: 'Rainy',
+      condition: "Rainy",
     },
     // { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
     // { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
