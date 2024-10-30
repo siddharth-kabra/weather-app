@@ -22,7 +22,7 @@ const SearchBarComponent = ({ data }: Props) => {
   );
   useEffect(() => {
     dispatch(setSelectedCity('London'));
-  }, []);
+  }, [dispatch]);
   const handleSelectCity = async (item: string) => {
     dispatch(setSelectedCity(item));
     setSearchValue('');

@@ -1,21 +1,15 @@
 export const getUnitedKingdomCities = async () => {
   try {
-    const res = await fetch(
-      'https://countriesnow.space/api/v0.1/countries/cities',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          country: 'united kingdom',
-        }),
-        // revalidate time kept to 3600 to keep the cached data for 1 hour
-        // next: { revalidate: 3600 },
+    const res = await fetch('https://countriesnow.space/api/v0.1/countries', {
+      headers: {
+        'Content-Type': 'application/json',
       },
-    );
+      cache: 'force-cache',
+    });
     const data = await res?.json();
-    return data?.data;
+    return data?.data?.filter(
+      (item: { country: string }) => item.country === 'United Kingdom',
+    );
   } catch (error) {
     console.error(error);
   }
@@ -23,10 +17,6 @@ export const getUnitedKingdomCities = async () => {
 
 export const getWeatherData = async (city: string) => {
   try {
-    // const res = await fetch(
-    //   `https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${process.env.NEXT_WEATHER_API_KEY}`,
-    //   { method: 'GET', headers: { accept: 'application/json' } },
-    // );
     const res = await fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${process.env.NEXT_WEATHER_API_KEY}&contentType=json`,
       {
