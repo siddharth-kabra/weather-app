@@ -10,6 +10,7 @@ export const CONSTANTS = {
   KM_HR: 'km/hr',
   MAX_TEMP: 'Max temp',
   MIN_TEMP: 'Min temp',
+  PLACEHOLDER: 'Search City in United Kingdom',
 };
 
 export const tabs = [
@@ -17,3 +18,29 @@ export const tabs = [
   { label: 'Tomorrow', content: 'Tomorrow' },
   { label: 'Next 5 Days', content: 'Next 5 Days' },
 ];
+
+export const rainyConditions = [
+  'thunder-rain',
+  'thunder-showers-day',
+  'thunder-showers-night',
+  'rain',
+  'showers-day',
+  'showers-night',
+];
+
+export const snowConditions = [
+  'snow',
+  'snow-showers-day',
+  'snow-showers-night',
+];
+
+export const windAndFogConditions = ['fog', 'wind'];
+
+export const cloudyConditions = ['cloudy'];
+
+export const partlyCloudyConditions = [
+  'partly-cloudy-day',
+  'partly-cloudy-night',
+];
+
+export const clearConditions = ['clear-day', 'clear-night	'];

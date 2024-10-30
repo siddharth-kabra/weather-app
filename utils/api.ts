@@ -1,10 +1,11 @@
+// this API will be called only once and data will be cached, so that there are
+// no redundant hits on server to get the data which do not change frequently
 export const getUnitedKingdomCities = async () => {
   try {
     const res = await fetch('https://countriesnow.space/api/v0.1/countries', {
       headers: {
         'Content-Type': 'application/json',
       },
-      cache: 'force-cache',
     });
     const data = await res?.json();
     return data?.data?.filter(
