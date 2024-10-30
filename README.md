@@ -28,7 +28,7 @@ weather-app
 ### Go to weather-app:
 
 - Checkout to dev branch `git checkout dev`
-- Create and `env` file and add the above mentioned variables
+- Create an `env` file and add the above mentioned variable
 - Run `yarn`
 - Run `yarn build` to create build
 - Run `yarn start` to start the production ready build
