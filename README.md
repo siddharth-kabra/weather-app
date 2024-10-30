@@ -32,3 +32,8 @@ weather-app
 - Run `yarn`
 - Run `yarn build` to create build
 - Run `yarn start` to start the production ready build
+
+### Key points:
+
+- Added server side rendering and caching in cities API for better performance.
+- Added debounce on search for optimised performance.
