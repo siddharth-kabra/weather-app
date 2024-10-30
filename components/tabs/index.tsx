@@ -23,12 +23,12 @@ const TabComponent = ({ tabs }: Props) => {
         {tabs?.map(tab => (
           <li
             key={tab.label}
-            className={`mr-2 cursor-pointer  flex-1 rounded-full text-center ${
-              activeTab === tab.label ? 'bg-red-950' : 'inactive'
+            className={`mr-2 cursor-pointer  flex-1 rounded text-center text-blue-700 hover:bg-blue-700 hover:text-white ${
+              activeTab === tab.label ? 'bg-blue-700 text-white' : 'inactive'
             }`}
             onClick={() => handleTabClick(tab.label)}
           >
-            <p className="inline-block text-blue-700 hover:text-blue-700 rounded-t-lg py-2 text-sm font-medium text-center">
+            <p className="inline-block rounded-t-lg py-2 text-sm font-medium text-center">
               {tab.label}
             </p>
           </li>

@@ -59,7 +59,7 @@ const SearchBarComponent = ({ data }: Props) => {
             autoComplete="off"
             value={searchValue}
             aria-label="Search City from UK"
-            className="w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-0"
+            className="w-full pr-3 pl-10 py-2 placeholder-gray-400 text-black rounded border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-0"
           />
         </div>
         {isDropdownVisible && value && filteredResults.length > 0 && (
@@ -75,12 +75,12 @@ const SearchBarComponent = ({ data }: Props) => {
             ))}
           </ul>
         )}
-      </div>
       {isDropdownVisible && searchValue && !filteredResults.length && (
-        <p className="mt-2 w-1/2 bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
+        <p className="mt-2 min-h-[100px] absolute right-0 left-0 flex items-center justify-center bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
           {CONSTANTS.NO_RESULTS_FOUND}
         </p>
       )}
+      </div>
       <SelectedCity />
     </div>
   );
