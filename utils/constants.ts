@@ -10,6 +10,7 @@ export const CONSTANTS = {
   KM_HR: 'km/hr',
   MAX_TEMP: 'Max temp',
   MIN_TEMP: 'Min temp',
+  PLACEHOLDER: 'Search City in United Kingdom',
 };
 
 export const tabs = [
