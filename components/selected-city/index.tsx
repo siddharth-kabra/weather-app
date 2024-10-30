@@ -7,10 +7,10 @@ const SelectedCity = () => {
   );
 
   return (
-    <div className="relative flex-shrink-0 mt-3">
-      <div className="flex items-center gap-1">
+    <div className="relative flex-shrink-0 mt-3 bg-blue-700 px-5 py-3 rounded-full">
+      <div className="flex items-center gap-1 text-white">
         <FaLocationDot />
-        <span>{selectedCity}</span>
+        <span className="tracking-wide">{selectedCity}</span>
       </div>
     </div>
   );
