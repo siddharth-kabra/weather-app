@@ -19,7 +19,7 @@ const TabComponent = ({ tabs }: Props) => {
   };
   return (
     <div data-controller="tabs" className="">
-      <ul className="flex flex-wrap rounded bg-grey w-full">
+      <ul className="flex rounded bg-grey w-full overflow-auto">
         {tabs?.map(tab => (
           <li
             key={tab.label}

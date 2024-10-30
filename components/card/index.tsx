@@ -40,11 +40,11 @@ const Cards = ({ weatherData, isLoading }: Props) => {
   }
 
   if (!weatherData || weatherData.length === 0) {
-    return <div className="text-white">{CONSTANTS.NO_WEATHER_DATA}</div>;
+    return <div className="text-gray-500">{CONSTANTS.NO_WEATHER_DATA}</div>;
   }
   return activeTab === "Today" || activeTab === "Tomorrow" ? (
     <div className="flex flex-wrap justify-center">
-      <div className="flex text-white items-center p-8 rounded-md w-full sm:px-12 bg-gradient-to-r from-blue-700 to-blue-700/[0.7] mt-5 hover:shadow-lg hover:shadow-blue-100 transition">
+      <div className="md:flex text-white items-center p-8 rounded-md w-full sm:px-12 bg-gradient-to-r from-blue-700 to-blue-700/[0.7] mt-5 hover:shadow-lg hover:shadow-blue-100 transition">
         <div className="flex-1">
           <p className="text-4xl font-extralight mb-2">
             {dayjs
@@ -67,7 +67,7 @@ const Cards = ({ weatherData, isLoading }: Props) => {
             </span>
           </h2>
         </div>
-        <div className="flex-0 text-center">
+        <div className="flex-0 text-center mt-5 md:mt-0">
           <div className="flex items-start">
             <FaCloudMoon className="text-white text-[80px]" />
             <p className="text-[80px] font-semibold">
@@ -76,7 +76,7 @@ const Cards = ({ weatherData, isLoading }: Props) => {
           </div>
           <p>{weatherData[activeTab === "Today" ? 0 : 1]?.conditions}</p>
         </div>
-        <div className="flex-1 text-right">
+        <div className="flex-1 md:text-right">
           <p className="text-base font-light">
             {CONSTANTS.MAX_TEMP}{" "}
             <span className="font-bold">

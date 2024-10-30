@@ -20,7 +20,6 @@ const WeatherComponent = () => {
       }
       setIsLoding(false);
     } catch (error) {
-      console.error(error);
       setIsLoding(false);
     }
   };
