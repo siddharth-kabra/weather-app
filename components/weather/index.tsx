@@ -31,7 +31,7 @@ const WeatherComponent = () => {
   }, [selectedCity]);
 
   return (
-    <div className="bg-white shadow m-5 p-8 rounded">
+    <div className="bg-white shadow-md m-5 p-8 rounded flex-1 shadow-blue-100">
       <TabComponent tabs={tabs} />
       <Cards weatherData={weatherData} isLoading={isLoading} />
     </div>

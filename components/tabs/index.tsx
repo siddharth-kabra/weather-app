@@ -18,13 +18,13 @@ const TabComponent = ({ tabs }: Props) => {
     dispatch(setActiveTab(tab));
   };
   return (
-    <div data-controller="tabs" className="mx-6">
-      <ul className="flex flex-wrap rounded">
+    <div data-controller="tabs" className="">
+      <ul className="flex flex-wrap rounded bg-grey w-full">
         {tabs?.map(tab => (
           <li
             key={tab.label}
-            className={`mr-2 cursor-pointer  flex-1 rounded text-center text-blue-700 hover:bg-blue-700 hover:text-white ${
-              activeTab === tab.label ? 'bg-blue-700 text-white' : 'inactive'
+            className={`mr-2 cursor-pointer  flex-[0_1_150px] rounded text-center text-blue-700 hover:bg-blue-700 hover:text-white transition ${
+              activeTab === tab.label ? 'bg-blue-700 text-white' : 'inactive border border-blue-700'
             }`}
             onClick={() => handleTabClick(tab.label)}
           >

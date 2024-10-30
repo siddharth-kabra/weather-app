@@ -43,34 +43,35 @@ const Cards = ({ weatherData, isLoading }: Props) => {
     return <div className="text-white">{CONSTANTS.NO_WEATHER_DATA}</div>;
   }
   return activeTab === "Today" || activeTab === "Tomorrow" ? (
-    <div className="flex flex-wrap justify-center mx-6">
-      <div className="flex text-white items-center p-8 rounded-md w-full sm:px-12 bg-gradient-to-r from-blue-700 to-blue-700/[0.7] mt-5">
-        <div className="flex-1">
-          <p>
+    <div className="flex flex-wrap justify-center">
+      <div className="flex text-white items-center p-8 rounded-md w-full sm:px-12 bg-gradient-to-r from-blue-700 to-blue-700/[0.7] mt-5 hover:shadow-lg hover:shadow-blue-100 transition">
+        <div className="flex-1" >
+          <p className="text-4xl font-extralight mb-2">
             {dayjs
               ?.unix(weatherData[activeTab === "Today" ? 0 : 1]?.datetimeEpoch)
               ?.format("MMMM D, YYYY")}
             °
           </p>
-          <h2 className="text-xl font-semibold">
+          <h2 className="text-xl font-light mb-2">
             {" "}
             {CONSTANTS.HUMIDITY}{" "}
-            {weatherData[activeTab === "Today" ? 0 : 1]?.humidity} %
+            <span className="font-semibold" >{weatherData[activeTab === "Today" ? 0 : 1]?.humidity} %</span>
           </h2>
-          <h2 className="text-xl font-semibold">
+          <h2 className="text-xl font-light">
             {CONSTANTS.WIND_SPEED}{" "}
-            {weatherData[activeTab === "Today" ? 0 : 1]?.windspeed}{" "}
-            {CONSTANTS.KM_HR}
+            <span className="font-semibold" >{weatherData[activeTab === "Today" ? 0 : 1]?.windspeed}{" "}
+            {CONSTANTS.KM_HR}</span>
+            
           </h2>
         </div>
-        <div className="flex-1 text-center">
+        <div className="flex-0 text-center">
           <div className="flex items-start">
             <FaCloudMoon className="text-white text-[80px]" />
             <p className="text-[80px] font-semibold">
               {Math.ceil(weatherData[activeTab === "Today" ? 0 : 1]?.temp)}°
             </p>
           </div>
-          <p className="mt-[-20px]">
+          <p>
             {weatherData[activeTab === "Today" ? 0 : 1]?.conditions}
           </p>
         </div>
