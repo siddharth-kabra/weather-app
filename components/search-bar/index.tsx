@@ -21,8 +21,8 @@ const SearchBarComponent = ({ data }: Props) => {
     (item) => item?.toLowerCase()?.includes(value?.toLowerCase()),
   );
   useEffect(() => {
-    dispatch(setSelectedCity("London"));
-  }, []);
+    dispatch(setSelectedCity('London'));
+  }, [dispatch]);
   const handleSelectCity = async (item: string) => {
     dispatch(setSelectedCity(item));
     setSearchValue("");
