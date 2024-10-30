@@ -2,15 +2,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FaBell, FaHome, FaUser, FaWhmcs } from 'react-icons/fa';
-import { FaLocationDot } from 'react-icons/fa6';
+import { FaBell, FaHome, FaWhmcs } from 'react-icons/fa';
+import { FaArrowTrendUp, FaLocationDot } from 'react-icons/fa6';
 
 const SidebarComponent = () => {
   const pathname = usePathname();
   const links = [
     { href: '/', label: 'Home', id: '1', icon: <FaHome /> },
     { href: '/location', label: 'Location', id: '2', icon: <FaLocationDot /> },
-    { href: '/users', label: 'Users', id: '3', icon: <FaUser /> },
+    { href: '/users', label: 'Top Stories', id: '3', icon: <FaArrowTrendUp /> },
     {
       href: '/notifications',
       label: 'Notifications',
