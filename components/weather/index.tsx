@@ -10,18 +10,18 @@ import { tabs } from '@/utils/constants';
 const WeatherComponent = () => {
   const selectedCity = useAppSelector(state => state.selectedCity.selectedCity);
   const [weatherData, setWeatherData] = useState<WeatherData[]>();
-  const [isLoading, setIsLoding] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const fetchWeatherData = async () => {
-    setIsLoding(true);
+    setIsLoading(true);
     try {
       const data = await getWeatherData(selectedCity ?? 'London');
       if (data) {
         setWeatherData(data?.days || []);
       }
-      setIsLoding(false);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
-      setIsLoding(false);
+      setIsLoading(false);
     }
   };
   useEffect(() => {

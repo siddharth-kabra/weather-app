@@ -14,8 +14,9 @@ interface Props {
 
 const SearchBarComponent = ({ data }: Props) => {
   const [searchValue, setSearchValue] = useState('');
-  const [value] = useDebounce(searchValue, 1000);
+  const [value, { isPending }] = useDebounce(searchValue, 1000);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  console.log(isPending())
   const dispatch = useAppDispatch();
   const filteredResults = data?.filter(
     item => item?.toLowerCase()?.includes(value?.toLowerCase()),
@@ -75,11 +76,11 @@ const SearchBarComponent = ({ data }: Props) => {
             ))}
           </ul>
         )}
-      {isDropdownVisible && searchValue && !filteredResults.length && (
-        <p className="mt-2 min-h-[100px] absolute right-0 left-0 flex items-center justify-center bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
-          {CONSTANTS.NO_RESULTS_FOUND}
-        </p>
-      )}
+        {isDropdownVisible && searchValue && !filteredResults.length && (
+          <p className="mt-2 min-h-[100px] absolute right-0 left-0 flex items-center justify-center bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
+            {CONSTANTS.NO_RESULTS_FOUND}
+          </p>
+        )}
       </div>
       <SelectedCity />
     </div>

@@ -10,4 +10,5 @@ export interface WeatherData {
   tempmin: number;
   windspeed: number;
   datetimeEpoch: number;
+  icon: string;
 }
