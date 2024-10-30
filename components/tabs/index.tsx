@@ -23,12 +23,12 @@ const TabComponent = ({ tabs }: Props) => {
         {tabs?.map(tab => (
           <li
             key={tab.label}
-            className={`mr-2 cursor-pointer  flex-[0_1_150px] rounded text-center text-blue-700 hover:bg-blue-700 hover:text-white transition ${
+            className={`whitespace-nowrap mr-2 cursor-pointer  flex-[0_1_150px] rounded text-center text-blue-700 hover:bg-blue-700 hover:text-white transition ${
               activeTab === tab.label ? 'bg-blue-700 text-white' : 'inactive border border-blue-700'
             }`}
             onClick={() => handleTabClick(tab.label)}
           >
-            <p className="inline-block rounded-t-lg py-2 text-sm font-medium text-center">
+            <p className="inline-block rounded-t-lg p-2 text-sm font-medium text-center">
               {tab.label}
             </p>
           </li>
