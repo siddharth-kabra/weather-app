@@ -1,31 +1,31 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { useDebounce } from 'use-debounce';
-import { v4 as uuidv4 } from 'uuid';
-import SelectedCity from '../selected-city';
-import { setSelectedCity } from '@/libs/features/city';
-import { useAppDispatch } from '@/libs/hooks';
-import { CONSTANTS } from '@/utils/constants';
+import React, { useEffect, useState } from "react";
+import { useDebounce } from "use-debounce";
+import { v4 as uuidv4 } from "uuid";
+import SelectedCity from "../selected-city";
+import { setSelectedCity } from "@/libs/features/city";
+import { useAppDispatch } from "@/libs/hooks";
+import { CONSTANTS } from "@/utils/constants";
 
 interface Props {
   data: string[];
 }
 
 const SearchBarComponent = ({ data }: Props) => {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const [value] = useDebounce(searchValue, 1000);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const dispatch = useAppDispatch();
   const filteredResults = data?.filter(
-    item => item?.toLowerCase()?.includes(value?.toLowerCase()),
+    (item) => item?.toLowerCase()?.includes(value?.toLowerCase()),
   );
   useEffect(() => {
     dispatch(setSelectedCity('London'));
   }, [dispatch]);
   const handleSelectCity = async (item: string) => {
     dispatch(setSelectedCity(item));
-    setSearchValue('');
+    setSearchValue("");
     setIsDropdownVisible(false);
   };
 
@@ -36,7 +36,7 @@ const SearchBarComponent = ({ data }: Props) => {
 
   return (
     <div className="relative flex items-start justify-between text-gray-400 focus-within:text-gray-600">
-      <div className="w-1/2">
+      <div className="w-1/2 relative">
         <div className="relative flex items-center">
           <svg
             className="w-5 h-5 absolute ml-3 pointer-events-none"
@@ -59,12 +59,12 @@ const SearchBarComponent = ({ data }: Props) => {
             autoComplete="off"
             value={searchValue}
             aria-label="Search City from UK"
-            className="w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2"
+            className="w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-0"
           />
         </div>
         {isDropdownVisible && value && filteredResults.length > 0 && (
-          <ul className="mt-2 bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
-            {filteredResults?.map(item => (
+          <ul className="mt-2 bg-white rounded-md shadow-lg max-h-60 overflow-y-auto absolute right-0 left-0">
+            {filteredResults?.map((item) => (
               <li
                 key={uuidv4()}
                 className="px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
