@@ -24,7 +24,7 @@ const Cards = ({ weatherData, isLoading }: Props) => {
         <div className="animate-pulse flex space-x-4">
           <div className="flex-1 space-y-6 py-1">
             <div className="h-2 bg-slate-200 rounded"></div>
-          <div className="m-auto rounded-full bg-slate-200 h-20 w-20"></div>
+            <div className="m-auto rounded-full bg-slate-200 h-20 w-20"></div>
             <div className="space-y-3">
               <div className="grid grid-cols-3 gap-4">
                 <div className="h-2 bg-slate-200 rounded col-span-1"></div>
@@ -45,7 +45,7 @@ const Cards = ({ weatherData, isLoading }: Props) => {
   return activeTab === "Today" || activeTab === "Tomorrow" ? (
     <div className="flex flex-wrap justify-center">
       <div className="flex text-white items-center p-8 rounded-md w-full sm:px-12 bg-gradient-to-r from-blue-700 to-blue-700/[0.7] mt-5 hover:shadow-lg hover:shadow-blue-100 transition">
-        <div className="flex-1" >
+        <div className="flex-1">
           <p className="text-4xl font-extralight mb-2">
             {dayjs
               ?.unix(weatherData[activeTab === "Today" ? 0 : 1]?.datetimeEpoch)
@@ -55,13 +55,16 @@ const Cards = ({ weatherData, isLoading }: Props) => {
           <h2 className="text-xl font-light mb-2">
             {" "}
             {CONSTANTS.HUMIDITY}{" "}
-            <span className="font-semibold" >{weatherData[activeTab === "Today" ? 0 : 1]?.humidity} %</span>
+            <span className="font-semibold">
+              {weatherData[activeTab === "Today" ? 0 : 1]?.humidity} %
+            </span>
           </h2>
           <h2 className="text-xl font-light">
             {CONSTANTS.WIND_SPEED}{" "}
-            <span className="font-semibold" >{weatherData[activeTab === "Today" ? 0 : 1]?.windspeed}{" "}
-            {CONSTANTS.KM_HR}</span>
-            
+            <span className="font-semibold">
+              {weatherData[activeTab === "Today" ? 0 : 1]?.windspeed}{" "}
+              {CONSTANTS.KM_HR}
+            </span>
           </h2>
         </div>
         <div className="flex-0 text-center">
@@ -71,37 +74,43 @@ const Cards = ({ weatherData, isLoading }: Props) => {
               {Math.ceil(weatherData[activeTab === "Today" ? 0 : 1]?.temp)}°
             </p>
           </div>
-          <p>
-            {weatherData[activeTab === "Today" ? 0 : 1]?.conditions}
-          </p>
+          <p>{weatherData[activeTab === "Today" ? 0 : 1]?.conditions}</p>
         </div>
         <div className="flex-1 text-right">
-          <p className="text-base font-medium">
+          <p className="text-base font-light">
             {CONSTANTS.MAX_TEMP}{" "}
-            {Math.ceil(weatherData[activeTab === "Today" ? 0 : 1]?.tempmax)}°
+            <span className="font-bold">
+              {Math.ceil(weatherData[activeTab === "Today" ? 0 : 1]?.tempmax)}°
+            </span>
           </p>
-          <p className="text-base font-medium">
+          <p className="text-base font-light">
             {CONSTANTS.MIN_TEMP}{" "}
-            {Math.ceil(weatherData[activeTab === "Today" ? 0 : 1]?.tempmin)}°
+            <span className="font-bold">
+              {Math.ceil(weatherData[activeTab === "Today" ? 0 : 1]?.tempmin)}°
+            </span>
           </p>
 
-          <p className="text-base font-medium">
+          <p className="text-base font-light">
             {CONSTANTS.SUNRISE_AT}{" "}
-            {formatTimeTo12Hour(
-              weatherData[activeTab === "Today" ? 0 : 1]?.sunrise
-            )}
+            <span className="font-bold">
+              {formatTimeTo12Hour(
+                weatherData[activeTab === "Today" ? 0 : 1]?.sunrise
+              )}
+            </span>
           </p>
-          <p className="text-base font-medium">
+          <p className="text-base font-light">
             {CONSTANTS.SUNSET_AT}{" "}
-            {formatTimeTo12Hour(
-              weatherData[activeTab === "Today" ? 0 : 1]?.sunset
-            )}
+            <span className="font-bold">
+              {formatTimeTo12Hour(
+                weatherData[activeTab === "Today" ? 0 : 1]?.sunset
+              )}
+            </span>
           </p>
         </div>
       </div>
     </div>
   ) : (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap mt-[50px]">
       {weatherData
         ?.slice(2, 7)
         ?.map((item) => <SmallCard item={item} key={uuidv4()} />)}

@@ -35,7 +35,7 @@ const SearchBarComponent = ({ data }: Props) => {
   };
 
   return (
-    <div className="relative flex items-start justify-between text-gray-400 focus-within:text-gray-600 w-full">
+    <div className="relative w-full flex items-start justify-between text-gray-400 focus-within:text-gray-600">
       <div className="w-1/2 relative mt-3">
         <div className="relative flex items-center">
           <svg
