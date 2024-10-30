@@ -4,6 +4,12 @@ export const CONSTANTS = {
   RETURN_TO_HOME: 'Return home',
   SUNRISE_AT: 'Sunrise at :',
   SUNSET_AT: 'Sunset at :',
+  NO_WEATHER_DATA: 'No weather data available',
+  HUMIDITY: 'Humidity:',
+  WIND_SPEED: 'Wind speed:',
+  KM_HR: 'km/hr',
+  MAX_TEMP: 'Max temp',
+  MIN_TEMP: 'Min temp',
 };
 
 export const tabs = [

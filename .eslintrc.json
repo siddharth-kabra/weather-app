@@ -4,7 +4,6 @@
     "prettier",
     "eslint:recommended",
     "plugin:import/recommended",
-    "plugin:sonarjs/recommended"
   ],
   "plugins": ["react", "prettier", "@typescript-eslint", "import", "sonarjs"],
   "rules": {
