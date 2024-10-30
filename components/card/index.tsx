@@ -1,7 +1,15 @@
 "use client";
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import React from "react";
 import { useAppSelector } from "@/libs/hooks";
 import { WeatherData } from "@/types/interface";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+const formatDate = (timestamp: string) => dayjs.utc(timestamp).format("h:mm a");
 
 interface Props {
   weatherData?: WeatherData;
@@ -12,39 +20,21 @@ const Cards = ({ weatherData }: Props) => {
 
   const cardData = [
     {
-      city: "Dubai",
-      date: "July 29",
-      tempHigh: 32,
-      tempLow: 20,
-      condition: "Partly cloudy",
-    },
-    {
-      city: "New York",
-      date: "July 30",
-      tempHigh: 28,
-      tempLow: 18,
-      condition: "Sunny",
-    },
-    {
-      city: "London",
-      date: "July 31",
-      tempHigh: 22,
-      tempLow: 15,
-      condition: "Rainy",
-    },
-    {
-      city: "London",
-      date: "July 31",
-      tempHigh: 22,
-      tempLow: 15,
-      condition: "Rainy",
-    },
-    {
-      city: "London",
-      date: "July 31",
-      tempHigh: 22,
-      tempLow: 15,
-      condition: "Rainy",
+      humidityAvg: 89.71,
+      humidityMax: 98,
+      humidityMin: 77,
+
+      precipitationProbabilityAvg: 0.8,
+      precipitationProbabilityMax: 5,
+      precipitationProbabilityMin: 0,
+      sunriseTime: "2024-10-29T06:45:00Z",
+      sunsetTime: "2024-10-29T16:42:00Z",
+      temperatureAvg: 12.96,
+      temperatureMax: 15.69,
+      temperatureMin: 8.77,
+      windSpeedAvg: 2.26,
+      windSpeedMax: 3.13,
+      windSpeedMin: 1.27,
     },
     // { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
     // { city: 'London', date: 'July 31', tempHigh: 22, tempLow: 15, condition: 'Rainy' },
@@ -53,7 +43,28 @@ const Cards = ({ weatherData }: Props) => {
   console.log(weatherData, activeTab);
   return (
     <div className="flex flex-wrap justify-center">
-      {cardData.map((card, index) => (
+      <div className="flex flex-col items-center p-8 rounded-md w-60 sm:px-12 bg-gray-200 mt-5 mx-2">
+        <div className="text-center">
+          <h2 className="text-xl font-semibold">
+            {" "}
+            Humidity: {cardData[0].humidityAvg} %
+          </h2>
+          <p className="text-sm dark:text-gray-600">
+            {cardData[0].windSpeedAvg} km/hr
+          </p>
+        </div>
+
+        <div className="mb-2 text-3xl font-semibold">
+          {Math.ceil(cardData[0].temperatureAvg)}°
+        </div>
+        <p className="dark:text-gray-600">
+          {formatDate(cardData[0].sunriseTime)}
+        </p>
+        <p className="dark:text-gray-600">
+          {formatDate(cardData[0].sunsetTime)}
+        </p>
+      </div>
+      {/* {cardData.map((card, index) => (
         <div
           key={index}
           className="flex flex-col items-center p-8 rounded-md w-60 sm:px-12 bg-gray-200 mt-5 mx-2"
@@ -107,7 +118,7 @@ const Cards = ({ weatherData }: Props) => {
           </div>
           <p className="dark:text-gray-600">{card.condition}</p>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
