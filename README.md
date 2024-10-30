@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Getting started with Weather App
 
-## Getting Started
+## Objective
 
-First, run the development server:
+The core aim of Weather App is to display weather of a specific location for 
+present day, next day and forecast of upcoming 5 days.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Download node version [18.19.0](https://nodejs.org/en/blog/release/v18.19.0)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Next version
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- 14.1.4
 
-## Learn More
+## React version
 
-To learn more about Next.js, take a look at the following resources:
+- 18.2.0
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Project folder
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+weather-app
 
-## Deploy on Vercel
+## Env variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- NEXT_WEATHER_API_KEY=KFAGJW83VWRXDM8DUJ4NGNP63
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Go to weather-app:
+
+- Checkout to dev branch `git checkout dev`
+- Create and `env` file and add the above mentioned variables
+- Run `yarn`
+- Run `yarn build` to create an optimised build
+- Run `yarn start` to start the production ready build

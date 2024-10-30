@@ -1,17 +1,17 @@
-"use client";
-import { useEffect } from "react";
-import { setActiveTab } from "@/libs/features/tabs";
-import { useAppDispatch, useAppSelector } from "@/libs/hooks";
+'use client';
+import { useEffect } from 'react';
+import { setActiveTab } from '@/libs/features/tabs';
+import { useAppDispatch, useAppSelector } from '@/libs/hooks';
 
 interface Props {
   tabs: { label: string; content: string }[];
 }
 const TabComponent = ({ tabs }: Props) => {
-  const activeTab = useAppSelector((state) => state.selectedTab.activeTab);
+  const activeTab = useAppSelector(state => state.selectedTab.activeTab);
 
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setActiveTab("Today"));
+    dispatch(setActiveTab('Today'));
   }, [dispatch]);
 
   const handleTabClick = (tab: string) => {
@@ -20,11 +20,11 @@ const TabComponent = ({ tabs }: Props) => {
   return (
     <div data-controller="tabs" className="mx-6">
       <ul className="flex flex-wrap rounded">
-        {tabs?.map((tab) => (
+        {tabs?.map(tab => (
           <li
             key={tab.label}
             className={`mr-2 cursor-pointer  flex-1 rounded-full text-center ${
-              activeTab === tab.label ? "bg-blue-50" : "inactive"
+              activeTab === tab.label ? 'bg-red-950' : 'inactive'
             }`}
             onClick={() => handleTabClick(tab.label)}
           >
