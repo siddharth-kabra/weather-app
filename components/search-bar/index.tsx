@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import { useDebounce } from 'use-debounce';
 import { v4 as uuidv4 } from 'uuid';
 import SelectedCity from '../selected-city';
 import { setSelectedCity } from '@/libs/features/city';
 import { useAppDispatch } from '@/libs/hooks';
 import { CONSTANTS } from '@/utils/constants';
-import { FaSearch } from 'react-icons/fa';
 
 interface Props {
   data: string[];
@@ -17,7 +17,6 @@ const SearchBarComponent = ({ data }: Props) => {
   const [searchValue, setSearchValue] = useState('');
   const [value, { isPending }] = useDebounce(searchValue, 1000);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  console.log(isPending());
   const dispatch = useAppDispatch();
   const filteredResults = data?.filter(
     item => item?.toLowerCase()?.includes(value?.toLowerCase()),

@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import React, { Suspense } from "react";
-import StoreProvider from "./StoreProvider";
-import HeaderComponent from "@/components/header";
-import SidebarComponent from "@/components/side-bar";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import React, { Suspense } from 'react';
+import StoreProvider from './StoreProvider';
+import HeaderComponent from '@/components/header';
+import SidebarComponent from '@/components/side-bar';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Weather",
-  description: "Weather application",
+  title: 'Weather',
+  description: 'Weather application',
 };
 
 export default function RootLayout({

@@ -24,7 +24,9 @@ const TabComponent = ({ tabs }: Props) => {
           <li
             key={tab.label}
             className={`whitespace-nowrap mr-2 cursor-pointer  flex-[0_1_150px] rounded text-center text-blue-700 hover:bg-blue-700 hover:text-white transition ${
-              activeTab === tab.label ? 'bg-blue-700 text-white' : 'inactive border border-blue-700'
+              activeTab === tab.label
+                ? 'bg-blue-700 text-white'
+                : 'inactive border border-blue-700'
             }`}
             onClick={() => handleTabClick(tab.label)}
           >

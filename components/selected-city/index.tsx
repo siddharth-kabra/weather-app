@@ -1,10 +1,8 @@
-import { useAppSelector } from "@/libs/hooks";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaLocationDot } from 'react-icons/fa6';
+import { useAppSelector } from '@/libs/hooks';
 
 const SelectedCity = () => {
-  const selectedCity = useAppSelector(
-    (state) => state.selectedCity.selectedCity
-  );
+  const selectedCity = useAppSelector(state => state.selectedCity.selectedCity);
 
   return (
     <div className="relative flex-shrink-0 mt-3 bg-blue-700 px-5 py-3 rounded-full">
