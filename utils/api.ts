@@ -23,10 +23,18 @@ export const getUnitedKingdomCities = async () => {
 
 export const getWeatherData = async (city: string) => {
   try {
+    // const res = await fetch(
+    //   `https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${process.env.NEXT_WEATHER_API_KEY}`,
+    //   { method: 'GET', headers: { accept: 'application/json' } },
+    // );
     const res = await fetch(
-      `https://api.tomorrow.io/v4/weather/forecast?location=${city}&apikey=${process.env.NEXT_WEATHER_API_KEY}`,
-      { method: 'GET', headers: { accept: 'application/json' } },
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${process.env.NEXT_WEATHER_API_KEY}&contentType=json`,
+      {
+        method: 'GET',
+        headers: { accept: 'application/json' },
+      },
     );
+
     return await res?.json();
   } catch (error) {
     console.error(error);
